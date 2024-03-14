@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #ffffff; color: #000000;">
+    <a class="navbar-brand" href="/" style="color: #000000;">Clothstore</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url "about" %}" style="color: #000000;">About<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "contact" %}" style="color: #000000;">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/" role="button" data-toggle="dropdown" aria-expanded="false" style="color: #000000;">
+                    Categories
+                </a>
+                <div class="dropdown-menu" style="background-color: #ffffff;">
+                    <a class="dropdown-item" href="{% url "mencategories" %}" style="color: #000000;">Men</a>
+                    <a class="dropdown-item" href="{% url "womencategories" %}" style="color: #000000;">Women</a>
+                    <a class="dropdown-item" href="{% url "kidscategories" %}" style="color: #000000;">Kids</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-lg-0 mr-auto">
+            <input class="form-control custom-search-bar mr-2" type="search" placeholder="Search" aria-label="Search" style="width: 500px; background-color: #ffffff; color: #000000;">
+            <style>
+                .btn.btn-outline-success {
+                    position: relative;
+                    overflow: hidden;
+                    background: transparent;
+                    color: #000000;
+                    border: 2px solid #000000;
+                    transition: color 0.3s, background 0.3s;
+                }
+            
+                .btn.btn-outline-success:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #007bff; /* Background color to reveal on hover */
+                    transform: translateX(-100%);
+                    transition: transform 0.3s;
+                    z-index: -1;
+                }
+            
+                .btn.btn-outline-success:hover {
+                    color: #ffffff;
+                    background: transparent; /* Change this to the desired background color */
+                }
+            
+                .btn.btn-outline-success:hover:before {
+                    transform: translateX(0);
+                }
+            </style>
+            
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+        <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item active">
+                <a class="nav-link mr-4" href="{% url "profile" %}" style="color: #000000;"><b>Welcome {{user.first_name}}</b></a>
+            </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url "viewcart" %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </a>
+            </li>     
+            <li class="nav-item">
+                <a class="nav-link mr-4" href="{% url "logout" %}" style="color: #000000;">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url "registration" %}" style="color: #000000;">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" href="{% url "login" %}" style="color: #000000;">Login</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

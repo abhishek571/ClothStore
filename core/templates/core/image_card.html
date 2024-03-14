@@ -1,0 +1,42 @@
+<div class="container mt-5 x">    <!-- mt-4 stand for top margin from o-5 value -->
+    <h1>Cloth Categories </h1>
+</div>
+    <div class="container mt-4">
+        <div class="card-deck">
+          <!-- Dog card start-->
+          <a href="{% url "mencategories" %}" class = "card-img-href" style="text-decoration: none; ">
+            <div class="card ml-5 mt-5 mb-5" style="width: 18rem;">
+                <img class="card-img-top" src="static/core/images/men/mencard.png" alt="Card image cap">
+                <div class="card-body" style= "">
+                  <p class="card-text">Discover a curated collection of men's clothing designed for the modern gentleman. From casual essentials to sophisticated formal wear, our range is crafted to enhance your style and comfort.</p>
+                </div>
+              </div>
+            </a>
+          <!-- Dog card End-->
+      
+          <!-- Cat card start-->
+
+          <a href="{% url "womencategories" %}" class = "card-img-href" style="text-decoration: none; ">
+              <div class="card ml-5 mt-5" style="width: 18rem;">
+                <img class="card-img-top" src="static/core/images/women/womencard.png" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"> Explore our collection of women's fashion, where each piece reflects the essence of independence, agility, and affectionate style. Discover cherished companions for every occasion.</p>
+                </div>
+              </div>
+          </a>
+          <!-- Cat card End-->
+            
+          <!-- Bird card start-->
+          <a href="{% url "kidscategories" %}" class = "card-img-href" style="text-decoration: none; ">
+              <div class="card ml-5 mt-5 mr-5" style="width: 18rem;">
+                <img class="card-img-top" src="static/core/images/kids/kidcard.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"> Discover the joy of childhood with our trendy and cozy clothing collection for kids. Embrace their limitless imagination and vibrant energy with styles that are as unique and playful as they are.</p>
+                </div>
+              </div>
+          </a>
+          <!-- Bird card End-->
+          
+        </div>
+    </div>
+
